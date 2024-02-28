@@ -8,9 +8,9 @@ To revolutionize the culinary journey by creating a comprehensive, user-friendly
 
 ## User stories
 
-As a home cook, I want to share my unique recipes so that I can inspire others with my culinary creations.\n
-As a fitness enthusiast, I want to find meals with specific caloric contents so that I can maintain a healthy diet while enjoying diverse cuisines.\n
-As a beginner in cooking, I want to access step-by-step cooking guides so that I can learn to cook with ease and build my cooking skills.\n
+As a home cook, I want to share my unique recipes so that I can inspire others with my culinary creations.
+As a fitness enthusiast, I want to find meals with specific caloric contents so that I can maintain a healthy diet while enjoying diverse cuisines.
+As a beginner in cooking, I want to access step-by-step cooking guides so that I can learn to cook with ease and build my cooking skills.
 As a nutrition-conscious user, I want to see detailed nutritional information for each recipe so that I can make informed decisions about what I eat.
 As a busy worker, I want to find quick and easy recipes so that I can prepare meals efficiently without sacrificing quality.
 As a food lover, I want to explore recipes from different cultures so that I can enjoy a variety of flavors and expand my culinary horizons.
