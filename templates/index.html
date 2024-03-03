@@ -2,15 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recipe Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Featured Recipes</h1>
-    {% for recipe in recipes %}
-    <div>
-        <h2><a href="/recipe/{{ recipe._id }}">{{ recipe.name }}</a></h2>
+    <div class="container mt-5">
+        <h2>Recipe List</h2>
+        <a href="/add" class="btn btn-primary mb-3">Add New Recipe</a>
+        <div class="list-group">
+            {% for recipe in recipes %}
+                <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-    <a href="/add">Add New Recipe</a> | <a href="/search">Search Recipes</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

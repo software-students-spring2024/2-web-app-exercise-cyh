@@ -9,8 +9,10 @@ from werkzeug.utils import secure_filename
 load_dotenv()
 
 app = Flask(__name__)
-app.config['IMAGE_UPLOADS'] = 'path/to/save/photos'  # Update this path
+app.config['IMAGE_UPLOADS'] = os.path.join(os.getcwd(), 'static/uploads')
+
 app.config['ALLOWED_IMAGE_EXTENSIONS'] = ['PNG', 'JPG', 'JPEG', 'GIF']
+
 
 mongo_uri = os.getenv("MONGO_URI")
 mongo_dbname = os.getenv("MONGO_DBNAME")
