@@ -4,12 +4,11 @@ from bson.objectid import ObjectId
 import os
 from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
-
+import base64
 
 load_dotenv()
 
 app = Flask(__name__)
-app.config['IMAGE_UPLOADS'] = os.path.join(os.getcwd(), 'static/uploads')
 
 app.config['ALLOWED_IMAGE_EXTENSIONS'] = ['PNG', 'JPG', 'JPEG', 'GIF']
 
@@ -19,6 +18,11 @@ mongo_dbname = os.getenv("MONGO_DBNAME")
 client = MongoClient(mongo_uri)
 db = client[mongo_dbname]
 
+
+@app.template_filter('b64encode')
+def b64encode_filter(data):
+    return base64.b64encode(data).decode() if data else ''
+
 def allowed_image(filename):
     if not "." in filename:
         return False
@@ -27,6 +31,17 @@ def allowed_image(filename):
         return True
     else:
         return False
+
+from PIL import Image
+import io
+
+def save_image_to_mongodb(photo):
+    
+    img_io = io.BytesIO()
+    img = Image.open(photo)
+    img.save(img_io, format='PNG')  
+    img_io.seek(0)
+    return img_io.getvalue()  
 
 @app.route("/")
 def home():
@@ -50,13 +65,13 @@ def add_recipe():
         if 'photo' in request.files:
             photo = request.files['photo']
             if photo.filename != '' and allowed_image(photo.filename):
-                filename = secure_filename(photo.filename)
-                photo.save(os.path.join(app.config['IMAGE_UPLOADS'], filename))
-                recipe['photo'] = filename
+                # Instead of saving the file to the filesystem, save it in MongoDB as binary data
+                recipe['photo'] = save_image_to_mongodb(photo)
 
         db.recipes.insert_one(recipe)
         return redirect(url_for("home"))
     return render_template("add_recipe.html")
+
 
 @app.route("/edit/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
@@ -71,9 +86,7 @@ def edit_recipe(recipe_id):
         if 'photo' in request.files:
             photo = request.files['photo']
             if photo.filename != '' and allowed_image(photo.filename):
-                filename = secure_filename(photo.filename)
-                photo.save(os.path.join(app.config['IMAGE_UPLOADS'], filename))
-                updated_recipe['photo'] = filename
+                updated_recipe['photo'] = save_image_to_mongodb(photo)
 
         db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set": updated_recipe})
         return redirect(url_for("recipe_detail", recipe_id=recipe_id))

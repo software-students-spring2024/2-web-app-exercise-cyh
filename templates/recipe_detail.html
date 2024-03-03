@@ -14,7 +14,8 @@
         <p><strong>Steps:</strong></p>
         <p>{{ recipe.steps }}</p>
         {% if recipe.photo %}
-            <img src="{{ url_for('static', filename='images/' + recipe.photo) }}" alt="{{ recipe.name }}" class="img-fluid">
+            <!-- Update this line to use the binary image data -->
+            <img src="data:image/png;base64,{{ recipe.photo|b64encode }}" alt="{{ recipe.name }}" class="img-fluid">
         {% endif %}
         <a href="/edit/{{ recipe._id }}" class="btn btn-warning">Edit</a>
         <form action="/delete/{{ recipe._id }}" method="post" style="display: inline;">
