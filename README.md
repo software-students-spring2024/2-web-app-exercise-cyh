@@ -5,7 +5,7 @@ A little exercise to build a web application following an agile development proc
 ## Product vision statement
 
 To revolutionize the culinary journey by creating a comprehensive, user-friendly platform that not only enriches cooking and eating experiences with a diverse array of global recipes and detailed nutritional insights but also fosters a vibrant community of food enthusiasts. By empowering users to share their culinary creations, access personalized nutrition information, and connect with like-minded individuals, we aim to make cooking a more accessible, health-conscious, and socially engaging activity for everyone, regardless of their dietary preferences or cooking skill level.
-
+``
 ## User stories
 
 As a home cook, I want to share my unique recipes so that I can inspire others with my culinary creations.  
@@ -31,4 +31,5 @@ As a food-content creator, I want to post my recipes on social media so that I c
 
 ## Task boards
 
-See instructions. Delete this line and place a link to the task boards here.
+https://github.com/orgs/software-students-spring2024/projects/26/views/1
+https://github.com/orgs/software-students-spring2024/projects/28/views/1
