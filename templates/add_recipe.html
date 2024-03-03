@@ -2,16 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add New Recipe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Add a New Recipe</h1>
-    <form action="/add" method="post">
-        <input type="text" name="name" placeholder="Recipe Name" required>
-        <textarea name="ingredients" placeholder="Ingredients" required></textarea>
-        <textarea name="steps" placeholder="Preparation Steps" required></textarea>
-        <button type="submit">Add Recipe</button>
-    </form>
-    <a href="/">Back to Home</a>
+    <div class="container mt-5">
+        <h2>Add New Recipe</h2>
+        <form action="/add" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Recipe Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="steps">Preparation Steps</label>
+                <textarea class="form-control" id="steps" name="steps" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Recipe Photo</label>
+                <input type="file" class="form-control-file" id="photo" name="photo">
+                <small class="form-text text-muted">Supported formats: PNG, JPG, JPEG, GIF</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Recipe</button>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
