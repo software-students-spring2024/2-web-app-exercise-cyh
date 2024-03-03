@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Detail</title>
+</head>
+<body>
+    <h1>{{ recipe.name }}</h1>
+    <p>Ingredients: {{ recipe.ingredients }}</p>
+    <p>Steps: {{ recipe.steps }}</p>
+    <a href="/edit/{{ recipe._id }}">Edit Recipe</a>
+    <form action="/delete/{{ recipe._id }}" method="post">
+        <button type="submit">Delete Recipe</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

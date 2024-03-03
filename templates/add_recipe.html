@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Recipe</title>
+</head>
+<body>
+    <h1>Add a New Recipe</h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Recipe Name" required>
+        <textarea name="ingredients" placeholder="Ingredients" required></textarea>
+        <textarea name="steps" placeholder="Preparation Steps" required></textarea>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

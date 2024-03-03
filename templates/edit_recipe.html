@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <h1>Edit Recipe</h1>
+    <form action="/edit/{{ recipe._id }}" method="post">
+        <input type="text" name="name" value="{{ recipe.name }}" required>
+        <textarea name="ingredients" required>{{ recipe.ingredients }}</textarea>
+        <textarea name="steps" required>{{ recipe.steps }}</textarea>
+        <button type="submit">Update Recipe</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

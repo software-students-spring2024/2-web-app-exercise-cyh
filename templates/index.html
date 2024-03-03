@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Home</title>
+</head>
+<body>
+    <h1>Featured Recipes</h1>
+    {% for recipe in recipes %}
+    <div>
+        <h2><a href="/recipe/{{ recipe._id }}">{{ recipe.name }}</a></h2>
+    </div>
+    {% endfor %}
+    <a href="/add">Add New Recipe</a> | <a href="/search">Search Recipes</a>
+</body>
+</html>
