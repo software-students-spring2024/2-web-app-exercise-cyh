@@ -14,6 +14,8 @@
     <h2>Recipe List</h2>
     <a href="/add" class="btn btn-primary mb-3">Add New Recipe</a> <!-- Changed to <a> tag -->
     <a href="/search" class="btn btn-primary mb-3">Search Recipes</a> <!-- Consistency with the above change -->
+    <a href="/profile" class="btn btn-secondary mb-3">View Profile</a> <!-- View Profile Button -->
+
     <div class="list-group">
         {% for recipe in recipes %}
             <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
