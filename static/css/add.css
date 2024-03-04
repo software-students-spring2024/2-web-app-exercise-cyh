@@ -1,0 +1,59 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: rgb(252, 210, 210);
+    padding: 20px;
+}
+
+body {
+    background: rgb(177, 176, 141);
+}
+
+h2 {
+    text-align: center;
+    font-family: Playfair Display;
+    font-size: 54px;
+    background-color:rgb(253, 171, 171);
+    padding: 32px;
+}
+
+button {
+    text-align: center;
+    font-family: Josefin Sans;
+    border-radius: 16px;
+    transition-duration: 0.5s;
+    padding: 12px;
+    font-size: 14px;
+
+}
+
+button:hover {
+    background-color: yellowgreen;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.form-group {
+    text-align: center;
+}
+
+label {
+    font-size: 24px;
+    font-family: Josefin Sans;
+}
+
+.form-group > textarea {
+    font-family: Sarabun;
+}
+
+.form-text {
+    font-family: Josefin Sans;
+}
+
+.form-control-file {
+    text-align: center;
+    font-family: Josefin Sans;
+    border-radius: 16px;
+    transition-duration: 0.5s;
+    padding: 12px;
+    font-size: 14px;
+}
