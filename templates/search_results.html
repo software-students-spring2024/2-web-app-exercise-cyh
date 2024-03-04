@@ -13,11 +13,14 @@
     <div class="container mt-5">
         <h2>Search Results for "{{ query }}"</h2>
         <div class="list-group">
+            {% if recipes %}
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+            
+            {% endfor %}
             {% else %}
                 <p>No recipes found.</p>
-            {% endfor %}
+            {% endif %}
         </div>
         <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
         <!-- {% else %}
