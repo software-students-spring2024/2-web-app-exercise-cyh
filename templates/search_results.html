@@ -11,15 +11,19 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Search Results for "{{ query }}"</h2>
+        <h1>Search Results for "{{ query }}"</h1>
         <div class="list-group">
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+                <br />
+                <br />
+                <br />
+
             {% else %}
                 <p>No recipes found.</p>
             {% endfor %}
         </div>
-        <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+        <form action="/"><button class="btn btn-secondary mt-3">Back to Home</button></form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

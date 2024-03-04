@@ -45,10 +45,12 @@ button:hover {
 
 .list-group {
     font-size: 32px;
+    text-align: center;
 }
 
 .list-group-item {
     text-align: center;
+    font-family: Josefin Sans;
     /* background-color: rgb(240, 237, 237); */
     padding: 16px;
     border-radius: 12px;
