@@ -19,6 +19,8 @@
         <a href="/profile" class="btn btn-secondary mb-3">View Profile</a> <!-- View Profile Button -->
 
         </form>
+        <form action="/add"><button class="btn btn-primary mb-3">Add New Recipe</button></form>
+        <form action="/search"><button class="btn btn-primary mb-3">Search Recipes</button></form>
         <div class="list-group">
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
