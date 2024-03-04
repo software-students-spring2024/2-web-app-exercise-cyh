@@ -12,8 +12,8 @@
 <body>
     <div class="container mt-5">
         <h2>Recipe List</h2>
-        <button href="/add" class="btn btn-primary mb-3">Add New Recipe</button>
-        <button href="/search" class="btn btn-primary mb-3">Search Recipes</button>
+        <form action="/add"><button class="btn btn-primary mb-3">Add New Recipe</button></form>
+        <form action="/search"><button class="btn btn-primary mb-3">Search Recipes</button></form>
         <div class="list-group">
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>

@@ -20,11 +20,11 @@
             <!-- Update this line to use the binary image data -->
             <img src="data:image/png;base64,{{ recipe.photo|b64encode }}" alt="{{ recipe.name }}" class="img-fluid">
         {% endif %}
-        <button href="/edit/{{ recipe._id }}" class="btn btn-warning">Edit</button>
+        <form action="/edit/{{ recipe._id }}"><button class="btn btn-warning">Edit</button></form>
         <form action="/delete/{{ recipe._id }}" method="post" style="display: inline;">
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
-        <button href="/" class="btn btn-secondary">Back to List</button>
+        <form action="/" ><button class="btn btn-secondary">Back to List</button></form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
