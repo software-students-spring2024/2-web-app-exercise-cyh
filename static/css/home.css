@@ -42,7 +42,7 @@ button:hover {
 .list-group-item {
     text-align: center;
     /* background-color: rgb(240, 237, 237); */
-    padding: 16px;
+    padding: 14px;
     border-radius: 12px;
     background-image: linear-gradient(rgb(255, 255, 255), rgb(225, 224, 224))
 }
