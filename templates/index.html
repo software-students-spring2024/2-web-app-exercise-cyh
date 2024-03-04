@@ -13,7 +13,10 @@
 <div class="container mt-5">
     <h2>Recipe List</h2>
     <a href="/add" class="btn btn-primary mb-3">Add New Recipe</a> <!-- Changed to <a> tag -->
-    <a href="/search" class="btn btn-primary mb-3">Search Recipes</a> <!-- Consistency with the above change -->
+    <form action="/search" method="get" class="search-form">
+    <input type="text" name="query" placeholder="Search recipes..." class="search-input">
+    <button type="submit" class="btn btn-search">Search</button>
+    </form>
     <a href="/profile" class="btn btn-secondary mb-3">View Profile</a> <!-- View Profile Button -->
 
     <div class="list-group">
