@@ -46,17 +46,27 @@ a.btn:hover, a.btn:focus {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
+.list-group {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    gap: 10px; /* Space between items */
+}
+
 .list-group-item {
-    text-align: center;
-    margin-bottom: 10px; 
-    border: none; 
-    font-family: 'Josefin Sans', sans-serif;
-    background-image: linear-gradient(to right, #f9f9f9, #e9e9e9); 
-    color: #555; /* Text color */
-    transition: transform 0.2s, box-shadow 0.3s; 
+    display: block; /* Ensure links take up the full container width */
+    background-color: #fff; /* Background color for the boxes */
+    border: 1px solid #ddd; /* Border for the boxes */
+    border-radius: 8px; /* Rounded corners for the boxes */
+    padding: 15px; /* Padding inside the boxes */
+    color: #333; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    transition: transform 0.2s, box-shadow 0.3s; /* Smooth transition for hover effect */
 }
 
 .list-group-item:hover, .list-group-item:focus {
-    transform: scale(1.03); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px); /* Slight raise */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow for raised effect */
+    text-decoration: none; /* Ensure text decoration is removed on hover/focus */
+    background-color: #f9f9f9; /* Slight background change on hover */
 }
