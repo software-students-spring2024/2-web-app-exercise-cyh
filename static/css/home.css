@@ -1,72 +1,48 @@
 .container {
     max-width: 800px;
-    margin: 20px auto;
-    background: #fff; 
+    margin: auto;
+    background: rgb(252, 210, 210);
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 10px; 
 }
 
 body {
-    background: #f1f1e6; 
-    font-family: 'Sarabun', sans-serif; 
-    color: #333; 
-    line-height: 1.6; 
+    background: rgb(177, 176, 141);
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px; 
-    color: #444; 
-    margin-bottom: 20px;
+    text-align: center;
+    font-family: Playfair Display;
+    font-size: 54px;
+    background-color:rgb(253, 171, 171);
+    padding: 32px;
 }
 
-a.btn {
-    display: inline-block;
-    margin-right: 10px; 
-    border: none;
-    color: white; 
-    padding: 10px 20px; 
-    text-decoration: none; 
-    font-size: 18px; 
-    border-radius: 25px; 
-    transition: background-color 0.3s, transform 0.2s; 
+button, .list-group {
+    text-align: center;
+    font-family: Josefin Sans;
 }
 
-a.btn-primary {
-    background: #007bff;
+button {
+    border-radius: 16px;
+    transition-duration: 0.5s;
+    padding: 12px;
+    font-size: 14px;
+
 }
 
-a.btn-secondary {
-    background: #6c757d; 
-}
-
-a.btn:hover, a.btn:focus {
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+button:hover {
+    background-color: yellowgreen;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .list-group {
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    gap: 10px; /* Space between items */
+    font-size: 32px;
 }
 
 .list-group-item {
-    display: block; /* Ensure links take up the full container width */
-    background-color: #fff; /* Background color for the boxes */
-    border: 1px solid #ddd; /* Border for the boxes */
-    border-radius: 8px; /* Rounded corners for the boxes */
-    padding: 15px; /* Padding inside the boxes */
-    color: #333; /* Text color */
-    text-decoration: none; /* Remove underline from links */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    transition: transform 0.2s, box-shadow 0.3s; /* Smooth transition for hover effect */
-}
-
-.list-group-item:hover, .list-group-item:focus {
-    transform: translateY(-2px); /* Slight raise */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Enhanced shadow for raised effect */
-    text-decoration: none; /* Ensure text decoration is removed on hover/focus */
-    background-color: #f9f9f9; /* Slight background change on hover */
+    text-align: center;
+    /* background-color: rgb(240, 237, 237); */
+    padding: 16px;
+    border-radius: 12px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(225, 224, 224))
 }
