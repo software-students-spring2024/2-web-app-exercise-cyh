@@ -14,6 +14,9 @@
         <h2>Recipe List</h2>
         <form action="/add"><button class="btn btn-primary mb-3">Add New Recipe</button></form>
 
+        <form action="/profile"><button class="btn btn-primary mb-3">View Profile</button></form>
+
+
         <form action="/search" method="get" style="display: inline-block;">
             <input type="text" name="query" required="required" placeholder="Search recipes...">
             <button type="submit" class="btn btn-secondary">Search</button>
@@ -22,6 +25,9 @@
         <div class="list-group">
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+                <br />
+                <br />
+                <br />
             {% endfor %}
         </div>
     </div>
