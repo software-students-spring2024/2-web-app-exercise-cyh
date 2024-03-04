@@ -4,29 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-    <link href="../static/css/search.css" rel="stylesheet" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun" >
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <h2>Search Results for "{{ query }}"</h2>
         <div class="list-group">
-            {% if recipes %}
             {% for recipe in recipes %}
                 <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
-            
-            {% endfor %}
             {% else %}
                 <p>No recipes found.</p>
-            {% endif %}
+            {% endfor %}
         </div>
         <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
-        <!-- {% else %}
-        <p>No recipes found.</p>
-        {% endfor %} -->
-        <form action="/"><button>Back to Home</button></form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
