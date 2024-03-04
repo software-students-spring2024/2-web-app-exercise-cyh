@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Results</title>
+    <link href="../static/css/search.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
 </head>
 <body>
-    <h1>Search Results for "{{ query }}"</h1>
-    {% for recipe in recipes %}
-    <div>
-        <h2><a href="/recipe/{{ recipe._id }}">{{ recipe.name }}</a></h2>
+    <div class="container mt-5">
+        <h1>Search Results for "{{ query }}"</h1>
+        {% for recipe in recipes %}
+        <div>
+            <h2><a href="/recipe/{{ recipe._id }}">{{ recipe.name }}</a></h2>
+        </div>
+        {% else %}
+        <p>No recipes found.</p>
+        {% endfor %}
+        <button href="/">Back to Home</button>
     </div>
-    {% else %}
-    <p>No recipes found.</p>
-    {% endfor %}
-    <a href="/">Back to Home</a>
 </body>
 </html>
