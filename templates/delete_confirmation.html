@@ -15,8 +15,8 @@
             <p>This action cannot be undone.</p>
             <form style="text-align: center" action="/delete/{{ recipe._id }}" method="post" class="mt-4">
                 <button type="submit" class="btn btn-danger">Yes, delete it</button>
-                <form action="/recipe/{{ recipe._id }}"><button class="btn btn-secondary">Cancel</button></form>
             </form>
+            <form action="/recipe/{{ recipe._id }}"><button class="btn btn-secondary">Cancel</button></form>
         </div>
     </div>
 
