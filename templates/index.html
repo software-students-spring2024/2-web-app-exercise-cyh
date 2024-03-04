@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Recipe List</h2>
-        <button href="/add" class="btn btn-primary mb-3">Add New Recipe</button>
-        <button href="/search" class="btn btn-primary mb-3">Search Recipes</button>
-        <div class="list-group">
-            {% for recipe in recipes %}
-                <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
-            {% endfor %}
-        </div>
+<div class="container mt-5">
+    <h2>Recipe List</h2>
+    <a href="/add" class="btn btn-primary mb-3">Add New Recipe</a> <!-- Changed to <a> tag -->
+    <a href="/search" class="btn btn-primary mb-3">Search Recipes</a> <!-- Consistency with the above change -->
+    <div class="list-group">
+        {% for recipe in recipes %}
+            <a href="/recipe/{{ recipe._id }}" class="list-group-item list-group-item-action">{{ recipe.name }}</a>
+        {% endfor %}
     </div>
+</div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
