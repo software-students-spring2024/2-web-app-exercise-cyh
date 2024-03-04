@@ -97,6 +97,16 @@ def delete_recipe(recipe_id):
     db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     return redirect(url_for("home"))
 
+@app.route('/delete_confirmation/<recipe_id>')
+def delete_confirmation(recipe_id):
+    recipe = db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if recipe:
+        return render_template('delete_confirmation.html', recipe=recipe)
+    else:
+        return 'Recipe not found', 404
+
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search_recipes():
     query = request.args.get("query", "")

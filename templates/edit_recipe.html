@@ -2,23 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Recipe</title>
-    <link href="../static/css/edit.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sarabun">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Edit Recipe</h1>
-        <form action="/edit/{{ recipe._id }}" method="post">
-            <input type="text" name="name" value="{{ recipe.name }}" required>
-            <textarea name="ingredients" required>{{ recipe.ingredients }}</textarea>
-            <textarea name="steps" required>{{ recipe.steps }}</textarea>
-            <button type="submit">Update Recipe</button>
+        <h2>Edit Recipe</h2>
+        <form action="/edit/{{ recipe._id }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Recipe Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ recipe.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea class="form-control" id="ingredients" name="ingredients" rows="3" required>{{ recipe.ingredients }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="steps">Preparation Steps</label>
+                <textarea class="form-control" id="steps" name="steps" rows="5" required>{{ recipe.steps }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Recipe Photo</label>
+                <input type="file" class="form-control-file" id="photo" name="photo">
+                <small class="form-text text-muted">Supported formats: PNG, JPG, JPEG, GIF</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Recipe</button>
         </form>
-        <button href="/">Back to Home</button>
     </div>
-    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
